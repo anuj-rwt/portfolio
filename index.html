@@ -8,201 +8,200 @@
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <header class="topbar">
-    <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <div class="brand">Anuj Rawat</div>
+  <!-- Navbar -->
+  <header class="navbar">
+    <button class="hamburger" id="menuBtn">☰</button>
+    <h1 class="logo">Anuj Rawat</h1>
   </header>
 
-  <!-- Sidebar -->
+  <!-- Sidebar Menu -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h3>Menu</h3>
-      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+      <h2>Menu</h2>
+      <button class="close-btn" id="closeBtn">✖</button>
     </div>
 
     <nav class="sidebar-links">
-      <a href="#home" onclick="closeSidebar()"> Home</a>
-      <a href="#learning" onclick="closeSidebar()"> Learning</a>
-      <a href="#assignments" onclick="closeSidebar()"> Assignments</a>
+      <a href="#home" class="nav-link">🏠 Home</a>
+      <a href="#learning" class="nav-link">📘 Learning</a>
+      <a href="#assignments" class="nav-link">📄 Assignments</a>
 
-      <button class="dropdown-btn" onclick="toggleDropdown()">
-        Gallery <span id="arrow">▼</span>
-      </button>
-
-      <div class="dropdown-content" id="galleryDropdown">
-        <a href="#resume" onclick="closeSidebar()"> Resume</a>
-        <a href="#certifications" onclick="closeSidebar()">Certifications</a>
+      <div class="dropdown">
+        <button class="drop-btn" id="galleryBtn">🖼️ Gallery ▾</button>
+        <div class="drop-content" id="galleryMenu">
+          <a href="#resume" class="nav-link">📌 Resume</a>
+          <a href="#certifications" class="nav-link">🏅 Certifications</a>
+        </div>
       </div>
 
-      <a href="#contact" onclick="closeSidebar()">📞 Contact</a>
+      <a href="#contact" class="nav-link">📞 Contact</a>
     </nav>
   </aside>
 
   <!-- Overlay -->
-  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+  <div class="overlay" id="overlay"></div>
 
-  <!-- Home Section -->
-  <section class="home" id="home">
-    <div class="home-container">
+  <!-- Main -->
+  <main class="container">
 
-      <!-- Left: Summary -->
-      <div class="card summary-card">
-        <h1>Hello, I'm <span>Anuj Rawat</span> 👋</h1>
-        <h3>B.Tech CSE (AI & ML) | Graphic Era University</h3>
-
-        <p>
-          I am a passionate Computer Science student focused on building strong skills in
-          <b>DSA</b>, <b>Web Development</b>, and <b>Machine Learning</b>.
-          I love learning daily and building projects that improve my resume.
+    <!-- Home -->
+    <section class="section hero" id="home">
+      <div class="hero-left">
+        <h2>Hello, I'm <span class="highlight">Anuj Rawat</span> 👋</h2>
+        <p class="summary">
+          I am a B.Tech 1st year student (CSE AIML) at Graphic Era University.
+          I am learning DSA, Web Development and building projects to improve my skills.
+          I enjoy coding, problem solving, and creating useful applications.
         </p>
 
-        <div class="quick-info">
-          <div class="chip">💻 C / C++</div>
-          <div class="chip">🌐 Web Dev</div>
-          <div class="chip">🤖 AI / ML</div>
-          <div class="chip">📈 Growth Mindset</div>
+        <div class="hero-buttons">
+          <a class="btn" href="#learning">View Learning</a>
+          <a class="btn btn-outline" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="profile.jpg.jpeg" alt="Anuj Profile Photo" class="profile-pic" />
+
+        <div class="video-box">
+          <h3>🎥 Self Introduction Video</h3>
+          <video controls>
+            <source src="intro.mp4" type="video/mp4" />
+            Your browser does not support video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning -->
+    <section class="section" id="learning">
+      <h2>📘 Learnings (PESE Lab)</h2>
+      <p class="note">My daily learning summary from PESE practical lab.</p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Day 1(07 Jan 2026)</h3>
+          <p>
+            In the first PESE lab, ma’am took self-introductions from students and guided us on speaking confidently.
+            She also introduced herself and explained how PESE will improve our communication and personality.
+          </p>
         </div>
 
-        <a class="primary-btn" href="#contact">Contact Me</a>
+        <div class="card">
+          <h3>Day 2 (14 Jan 2026)</h3>
+          <p>
+            Ma’am explained the correct self-introduction format, what to include and what to avoid.
+            She also guided us on creating a portfolio website and shared the presentation topic for the next class.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Day 3 (21 Jan 2026)</h3>
+          <p>
+            We discussed profiling sheet questions such as career objectives, why I want to become an engineer,
+            projects, achievements, failures, strengths, and improvement areas. It helped me understand myself better.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Day 4 (28 Jan 2026)</h3>
+          <p>
+            In today’s PESE lab, we completed the remaining questions of the profiling sheet. After that, ma’am started
+            Unit 2 on Presentation Skills. She explained the primary and secondary objectives of a presentation and the
+            “what, why, and who” of presenting. She also shared content creation techniques, followed by a debate activity.
+          </p>
+        </div>
+
       </div>
+    </section>
 
-      <!-- Middle: Intro Video -->
-      <div class="card video-card">
-        <h2> Self Intro Video</h2>
+    <!-- Assignments -->
+    <section class="section" id="assignments">
+      <h2>📄 Assignments</h2>
+      <p class="note">Click below to open my PDFs (Drive links / hosted files).</p>
 
-        <!-- Option 1: Local video -->
-        <video controls class="intro-video">
-          <source src="intro.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div class="cards">
 
-        <!-- Option 2: If you want YouTube embed instead, tell me -->
-       
-      </div>
-
-      <!-- Right: Profile Image -->
-      <div class="card profile-card">
-        <h2> Professional Photo</h2>
-        <img src="profile.jpg.jpeg" alt="Profile Photo" class="profile-img" />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Learning Section -->
-  <section class="section" id="learning">
-    <h2> Learning (PESE Lab)</h2>
-
-    <div class="row">
-      <div class="input-group">
-        <label>Choose Topic</label>
-        <select id="learningTopic">
-          <option value="Day 1">Day 1</option>
-          <option value="Day 2">Day 2</option>
-          <option value="Day 3">Day 3</option>
-          <option value="Day 4">Day 4</option>
-          <option value="Day 5">Day 5</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div class="input-group flex-grow">
-        <label>Today's Learning</label>
-        <input type="text" id="learningText" placeholder="Eg: Learned stack using array in C++" />
-      </div>
-
-      <div class="btn-group">
-        <button class="primary-btn" onclick="addLearning()">Add</button>
-        <button class="danger-btn" onclick="clearLearning()">Clear All</button>
-      </div>
-    </div>
-
-    <div class="list" id="learningList"></div>
-  </section>
-
-  <!-- Assignments Section -->
-  <section class="section" id="assignments">
-    <h2> Assignments</h2>
-    <p class="muted">
-      Upload your PDF on Google Drive → Copy file link → Paste below.
-    </p>
-
-    <div class="row">
-      <div class="input-group flex-grow">
-        <label>Assignment Name</label>
-        <input type="text" id="pdfName" placeholder="Eg: DSA Lab 1" />
-      </div>
-
-      <div class="input-group flex-grow">
-        <label>PDF Link</label>
-        <input type="text" id="pdfLink" placeholder="Paste Google Drive PDF link..." />
-      </div>
-
-      <div class="btn-group">
-        <button class="primary-btn" onclick="addAssignment()">Add PDF</button>
-        <button class="danger-btn" onclick="clearAssignments()">Clear All</button>
-      </div>
-    </div>
-
-    <div class="list" id="assignmentList"></div>
-  </section>
-
-  <!-- Gallery - Resume -->
-  <section class="section" id="resume">
-    <h2> Resume</h2>
-
-    <div class="card simple-card">
-      <p class="muted">
-        Add your resume PDF link here (Google Drive / OneDrive).
-      </p>
-
-      <a class="link-btn" href="#" target="_blank" rel="noopener noreferrer">
-        Open Resume
-      </a>
-
-      
-    </div>
-  </section>
-
-  <!-- Gallery - Certifications -->
-  <section class="section" id="certifications">
-    <h2> Certifications</h2>
-
-    <div class="card simple-card">
-      <p class="muted">Add certification links below:</p>
-
-      <ul class="cert-list">
-        <li><a href="https://drive.google.com/file/d/1cfq7wCckz1gHNvocU-3SgQMq7nlgoRDR/view?usp=sharing" target="_blank" rel="noopener noreferrer">Data Structures Using C Programming</a></li>
-        <!-- <li><a href="#" target="_blank" rel="noopener noreferrer">Certification 2</a></li>
-        <li><a href="#" target="_blank" rel="noopener noreferrer">Certification 3</a></li> -->
-      </ul>
-
-      
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="section" id="contact">
-    <h2>📞 Contact Me</h2>
-
-    <div class="card contact-card">
-      <p><b>Website:</b> <a href="#" target="_blank">https://your-website.com</a></p>
-
-      <p><b>LinkedIn:</b>
-        <a href="https://www.linkedin.com/in/anujrawat15/" target="_blank" rel="noopener noreferrer">
-          https://www.linkedin.com/in/anujrawat15/
+        <a class="card link-card" href="https://drive.google.com/file/d/1FZconMQ8I8gmS3IsY5PNvlgmxRWfOPLf/view?usp=sharing" target="_blank">
+          <h3>📌 Profiling Sheet PDF</h3>
+          <p>Open my profiling sheet document.</p>
         </a>
-      </p>
 
-      <p><b>Mobile:</b> +91 9528621773</p>
-      <p><b>Email:</b> anujr4048@gmail.com</p>
-    </div>
+        <a class="card link-card" href="PASTE_YOUR_PDF_LINK_2" target="_blank">
+          <h3>📌 PESE Assignment PDF</h3>
+          <p>Open my PESE assignment file.</p>
+        </a>
 
-    <p class="footer">© 2026 Anuj Rawat | Portfolio</p>
-  </section>
+      </div>
+
+     
+    </section>
+
+    <!-- Resume -->
+    <section class="section" id="resume">
+      <h2>📌 Resume</h2>
+    
+      <div class="cards">
+        <a class="card link-card" href="PASTE_RESUME_LINK" target="_blank">
+          <h3>📄 View Resume</h3>
+          <p>Click to open my resume.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section" id="certifications">
+      <h2>🏅 Certifications</h2>
+      <p class="note">My certifications and achievements.</p>
+
+      <div class="cards">
+        <a class="card link-card" href="https://drive.google.com/file/d/1cfq7wCckz1gHNvocU-3SgQMq7nlgoRDR/view?usp=sharing" target="_blank">
+          <h3>🎓 Data Structures Using C Programming</h3>
+          <p>Click to view certificate.</p>
+        </a>
+
+        <a class="card link-card" href="https://drive.google.com/file/d/1TgLrtLVyiRy5QHc0PzYA-ae20TZu15uJ/view?usp=sharing" target="_blank">
+          <h3>🎓 AWS AI Practitioner learning Program</h3>
+          <p>Click to view certificate.</p>
+        </a>
+
+        <a class="card link-card" href="https://drive.google.com/file/d/171zk0kZgxcLR4MUJidOpCTAS1HnhH5-o/view?usp=sharing" target="_blank">
+          <h3>🎓 AWS Cloud Practitioner Essentials</h3>
+          <p>Click to view certificate.</p>
+        </a>
+        
+        <a class="card link-card" href="https://drive.google.com/file/d/1UNIKYnux0yfW1Nh0HL-Uo2GzykdzgRQ3/view?usp=sharing" target="_blank">
+          <h3>🎓 Fundamentals Of ML & AI</h3>
+          <p>Click to view certificate.</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <h2>📞 Contact Me</h2>
+      <p class="note">You can connect with me using the details below.</p>
+
+      <div class="contact-box">
+        <p><b>🌐 Website:</b> <span class="muted">Your GitHub Pages link here</span></p>
+        <p><b>🔗 LinkedIn:</b>
+          <a href="https://www.linkedin.com/in/anujrawat15/" target="_blank">
+            linkedin.com/in/anujrawat15
+          </a>
+        </p>
+        <p><b>📧 Email:</b> <a href="mailto:anujr4048@gmail.com">anujr4048@gmail.com</a></p>
+        <p><b>📱 Mobile:</b> +91 9528621773</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Anuj Rawat </p>
+    </footer>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
