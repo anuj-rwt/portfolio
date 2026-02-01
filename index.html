@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anuj Rawat | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <div class="brand">Anuj Rawat</div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Menu</h3>
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+
+    <nav class="sidebar-links">
+      <a href="#home" onclick="closeSidebar()"> Home</a>
+      <a href="#learning" onclick="closeSidebar()"> Learning</a>
+      <a href="#assignments" onclick="closeSidebar()"> Assignments</a>
+
+      <button class="dropdown-btn" onclick="toggleDropdown()">
+        Gallery <span id="arrow">▼</span>
+      </button>
+
+      <div class="dropdown-content" id="galleryDropdown">
+        <a href="#resume" onclick="closeSidebar()"> Resume</a>
+        <a href="#certifications" onclick="closeSidebar()">Certifications</a>
+      </div>
+
+      <a href="#contact" onclick="closeSidebar()">📞 Contact</a>
+    </nav>
+  </aside>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-container">
+
+      <!-- Left: Summary -->
+      <div class="card summary-card">
+        <h1>Hello, I'm <span>Anuj Rawat</span> 👋</h1>
+        <h3>B.Tech CSE (AI & ML) | Graphic Era University</h3>
+
+        <p>
+          I am a passionate Computer Science student focused on building strong skills in
+          <b>DSA</b>, <b>Web Development</b>, and <b>Machine Learning</b>.
+          I love learning daily and building projects that improve my resume.
+        </p>
+
+        <div class="quick-info">
+          <div class="chip">💻 C / C++</div>
+          <div class="chip">🌐 Web Dev</div>
+          <div class="chip">🤖 AI / ML</div>
+          <div class="chip">📈 Growth Mindset</div>
+        </div>
+
+        <a class="primary-btn" href="#contact">Contact Me</a>
+      </div>
+
+      <!-- Middle: Intro Video -->
+      <div class="card video-card">
+        <h2> Self Intro Video</h2>
+
+        <!-- Option 1: Local video -->
+        <video controls class="intro-video">
+          <source src="intro.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Option 2: If you want YouTube embed instead, tell me -->
+       
+      </div>
+
+      <!-- Right: Profile Image -->
+      <div class="card profile-card">
+        <h2> Professional Photo</h2>
+        <img src="profile.jpg.jpeg" alt="Profile Photo" class="profile-img" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Learning Section -->
+  <section class="section" id="learning">
+    <h2> Learning (PESE Lab)</h2>
+
+    <div class="row">
+      <div class="input-group">
+        <label>Choose Topic</label>
+        <select id="learningTopic">
+          <option value="Day 1">Day 1</option>
+          <option value="Day 2">Day 2</option>
+          <option value="Day 3">Day 3</option>
+          <option value="Day 4">Day 4</option>
+          <option value="Day 5">Day 5</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="input-group flex-grow">
+        <label>Today's Learning</label>
+        <input type="text" id="learningText" placeholder="Eg: Learned stack using array in C++" />
+      </div>
+
+      <div class="btn-group">
+        <button class="primary-btn" onclick="addLearning()">Add</button>
+        <button class="danger-btn" onclick="clearLearning()">Clear All</button>
+      </div>
+    </div>
+
+    <div class="list" id="learningList"></div>
+  </section>
+
+  <!-- Assignments Section -->
+  <section class="section" id="assignments">
+    <h2> Assignments</h2>
+    <p class="muted">
+      Upload your PDF on Google Drive → Copy file link → Paste below.
+    </p>
+
+    <div class="row">
+      <div class="input-group flex-grow">
+        <label>Assignment Name</label>
+        <input type="text" id="pdfName" placeholder="Eg: DSA Lab 1" />
+      </div>
+
+      <div class="input-group flex-grow">
+        <label>PDF Link</label>
+        <input type="text" id="pdfLink" placeholder="Paste Google Drive PDF link..." />
+      </div>
+
+      <div class="btn-group">
+        <button class="primary-btn" onclick="addAssignment()">Add PDF</button>
+        <button class="danger-btn" onclick="clearAssignments()">Clear All</button>
+      </div>
+    </div>
+
+    <div class="list" id="assignmentList"></div>
+  </section>
+
+  <!-- Gallery - Resume -->
+  <section class="section" id="resume">
+    <h2> Resume</h2>
+
+    <div class="card simple-card">
+      <p class="muted">
+        Add your resume PDF link here (Google Drive / OneDrive).
+      </p>
+
+      <a class="link-btn" href="#" target="_blank" rel="noopener noreferrer">
+        Open Resume
+      </a>
+
+      
+    </div>
+  </section>
+
+  <!-- Gallery - Certifications -->
+  <section class="section" id="certifications">
+    <h2> Certifications</h2>
+
+    <div class="card simple-card">
+      <p class="muted">Add certification links below:</p>
+
+      <ul class="cert-list">
+        <li><a href="https://drive.google.com/file/d/1cfq7wCckz1gHNvocU-3SgQMq7nlgoRDR/view?usp=sharing" target="_blank" rel="noopener noreferrer">Data Structures Using C Programming</a></li>
+        <!-- <li><a href="#" target="_blank" rel="noopener noreferrer">Certification 2</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">Certification 3</a></li> -->
+      </ul>
+
+      
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <h2>📞 Contact Me</h2>
+
+    <div class="card contact-card">
+      <p><b>Website:</b> <a href="#" target="_blank">https://your-website.com</a></p>
+
+      <p><b>LinkedIn:</b>
+        <a href="https://www.linkedin.com/in/anujrawat15/" target="_blank" rel="noopener noreferrer">
+          https://www.linkedin.com/in/anujrawat15/
+        </a>
+      </p>
+
+      <p><b>Mobile:</b> +91 9528621773</p>
+      <p><b>Email:</b> anujr4048@gmail.com</p>
+    </div>
+
+    <p class="footer">© 2026 Anuj Rawat | Portfolio</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
